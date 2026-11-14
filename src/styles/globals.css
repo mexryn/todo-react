@@ -1,71 +1,21 @@
-.todo {
+body {
   display: flex;
-  flex-direction: column;
-  row-gap: 24px;
-  width: 100%;
-  max-width: 404px;
-  min-height: 429px;
-  padding: 24px;
-  background-color: var(--color-white);
-  border: var(--border);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  justify-content: center;
+  align-items: start;
+  min-height: 100vh;
+  padding: 100px 30px;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-gray-1);
 }
 
-.todo__title {
-  text-align: center;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.2;
+input,
+label,
+button {
+  transition-duration: var(--transition-duration);
 }
 
-.todo__form {
-  display: flex;
-  column-gap: 16px;
-}
-
-.todo__field {
-  width: 100%;
-}
-
-.todo__info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  column-gap: 16px;
-  font-weight: 600;
-}
-
-.todo__delete-all-button {
-  padding: 0;
-  background-color: transparent;
-  border: none;
-
-  &:hover {
-    color: var(--color-gray-4);
-  }
-
-  &:not(.is-visible) {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-.todo__list,
-.todo__empty-message {
-  &:empty {
-    display: none;
-  }
-}
-
-.todo__list {
-  --todoListRowGap: 8px;
-
-  display: grid;
-  row-gap: var(--todoListRowGap);
-}
-
-.todo__empty-message {
-  text-align: center;
-  color: var(--color-gray-4);
+:focus-visible {
+  outline: 2px dashed var(--color-black);
+  outline-offset: 4px;
+  transition-duration: 0s !important;
 }
