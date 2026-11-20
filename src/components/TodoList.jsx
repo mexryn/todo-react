@@ -1,6 +1,6 @@
-import TodoItem from './TodoItem'   // ← вот этот импорт — главный подозреваемый
+import TodoItem from './TodoItem'   
 
-const TodoList = ({ tasks }) => {
+const TodoList = ({ tasks, onDeleteTaskButtonClick, onTaskCompleteChange }) => {
   const hasTasks = tasks.length > 0 
 
   if (!hasTasks) {
@@ -9,10 +9,16 @@ const TodoList = ({ tasks }) => {
 
   return (
     <ul className='todo__list'>
-      {tasks.map((task) => {
-      return <TodoItem key={task.id} 
-      {...task}/> 
-      })}
+
+      {tasks.map((task) => (
+      <TodoItem 
+
+      key={task.id} 
+      {...task}
+      onDeleteTaskButtonClick={onDeleteTaskButtonClick}
+      onTaskCompleteChange={onTaskCompleteChange}/>
+      ))}
+
     </ul>
   )
 }

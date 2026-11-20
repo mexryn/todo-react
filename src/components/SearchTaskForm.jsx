@@ -1,5 +1,9 @@
 import Field from './Field.jsx'
-const SearchTaskForm = () => {
+
+const SearchTaskForm = (props) => {
+    const {
+        onSearchInput,
+    } = props
     return (
     <form className="todo__form">
         <Field 
@@ -7,6 +11,7 @@ const SearchTaskForm = () => {
         label='Search task'
         id='seacrh-task'
         type='seacrh'
+        onInput={(event) => {onSearchInput(event.target.value)}}
         />
     </form>
     )
